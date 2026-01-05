@@ -70,7 +70,7 @@ body {
 }
 
 .header h1 {
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
@@ -82,7 +82,7 @@ body {
 
 .btn-refresh {
   padding: 0.5rem 0.875rem;
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
 }
 
 /* Loading bar */
@@ -98,7 +98,7 @@ body {
 }
 
 .loading-progress {
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: var(--text-secondary);
   position: relative;
   z-index: 1;
@@ -126,7 +126,7 @@ body {
   align-items: center;
   color: var(--danger);
   flex-shrink: 0;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .error-message button {
@@ -190,7 +190,7 @@ body {
   background-color: transparent;
   border: none;
   color: var(--text-secondary);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -226,9 +226,31 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--text-secondary);
-  font-size: 0.875rem;
+  font-size: 1rem;
   background: var(--bg-secondary);
   z-index: 5;
+}
+
+/* Axis labels */
+.axis-label {
+  position: absolute;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.axis-label-y {
+  right: 12px;
+  top: 12px;
+}
+
+.axis-label-x {
+  left: 12px;
+  bottom: 12px;
 }
 
 .brush-container {
@@ -247,7 +269,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
 }
 
 /* Token list - Collapsible on mobile */
@@ -294,12 +316,12 @@ body {
 }
 
 .token-expand-icon {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
 }
 
 .token-count {
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: var(--text-primary);
 }
@@ -320,12 +342,13 @@ body {
   display: flex;
   align-items: center;
   gap: 0.375rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.75rem;
   background-color: var(--bg-tertiary);
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.15s ease;
   border: 2px solid transparent;
+  width: fit-content;
 }
 
 .token-item:active {
@@ -349,10 +372,43 @@ body {
 }
 
 .token-symbol {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-primary);
   white-space: nowrap;
+}
+
+.token-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+  padding-left: 0.375rem;
+}
+
+.btn-copy {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.btn-copy:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.btn-copy:active {
+  transform: scale(0.9);
 }
 
 /* Buttons - Large touch targets */
@@ -363,7 +419,7 @@ body {
   border-radius: 8px;
   color: var(--bg-primary);
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.15s ease;
   min-height: 44px;
@@ -381,7 +437,7 @@ body {
   border-radius: 8px;
   color: var(--text-primary);
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.15s ease;
   min-height: 44px;
@@ -398,7 +454,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 6px;
   color: var(--text-secondary);
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -494,7 +550,7 @@ body {
 }
 
 .modal-header h2 {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
@@ -511,7 +567,7 @@ body {
   border: 2px solid var(--border);
   border-radius: 12px;
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: 1.125rem;
   margin-bottom: 1rem;
   min-height: 52px;
 }
@@ -556,12 +612,12 @@ body {
 
 .suggestion-name {
   font-weight: 600;
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
 }
 
 .suggestion-symbol {
   color: var(--text-secondary);
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .suggestion-item:active .suggestion-symbol {
@@ -572,7 +628,7 @@ body {
   text-align: center;
   color: var(--text-secondary);
   padding: 1.5rem;
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
 }
 
 .divider {
@@ -581,7 +637,7 @@ body {
   gap: 1rem;
   margin: 1.25rem 0;
   color: var(--text-secondary);
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   font-weight: 500;
 }
 
@@ -606,7 +662,7 @@ body {
   border: 2px solid var(--border);
   border-radius: 12px;
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: 1.125rem;
   min-height: 52px;
 }
 
@@ -644,7 +700,7 @@ body {
 }
 
 .form-group label {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-secondary);
   text-transform: uppercase;
@@ -668,7 +724,7 @@ body {
   border: 2px solid var(--border);
   border-radius: 12px;
   color: var(--text-secondary);
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -697,7 +753,7 @@ body {
   border: 2px solid var(--border);
   border-radius: 12px;
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: 1.125rem;
   min-height: 52px;
 }
 
@@ -716,7 +772,7 @@ body {
   border-radius: 12px;
   padding: 1rem;
   color: var(--danger);
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .btn-full {
@@ -736,7 +792,7 @@ body {
   .data-status {
     display: block;
     text-align: center;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: var(--text-secondary);
     padding: 0.5rem 0;
     flex-shrink: 0;
@@ -752,7 +808,7 @@ body {
   }
 
   .header h1 {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 
   .main {
@@ -772,38 +828,49 @@ body {
     padding: 0.5rem 1rem 0;
   }
 
-  .token-list,
-  .token-list.collapsed,
+  .token-list {
+    padding: 0.875rem;
+    border-radius: 10px;
+  }
+
+  .token-list.collapsed {
+    padding: 0.875rem;
+  }
+
   .token-list.expanded {
     padding: 0.875rem;
     max-height: 180px;
     overflow-y: auto;
-    border-radius: 10px;
   }
 
   .token-list-header {
-    cursor: default;
+    cursor: pointer;
     padding: 0 0 0.75rem;
   }
 
-  .token-list-header:active {
-    background-color: transparent;
+  .token-list-header:hover {
+    background-color: var(--bg-tertiary);
+    border-radius: 8px;
   }
 
   .token-expand-icon {
+    display: block;
+  }
+
+  .token-list.collapsed .token-grid {
     display: none;
   }
 
-  .token-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  .token-list.expanded .token-grid {
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
     padding: 0;
   }
 
   .token-item {
     border-radius: 10px;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.75rem;
   }
 
   .modal-overlay {
@@ -833,7 +900,7 @@ body {
 
   .footer p {
     color: var(--text-secondary);
-    font-size: 0.8125rem;
+    font-size: 0.9375rem;
     margin-bottom: 0;
   }
 }
@@ -847,10 +914,6 @@ body {
 
   .token-list {
     max-height: 200px;
-  }
-
-  .token-grid {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
 }
 

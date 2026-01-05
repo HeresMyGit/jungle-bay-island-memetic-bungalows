@@ -160,7 +160,7 @@ export default function App() {
     <div className="app">
       <header className="header">
         <div className="header-brand">
-          <img src="/logo.png" alt="Jungle Bay Island" className="header-logo" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Jungle Bay Island" className="header-logo" />
           <h1>Jungle Bay Island</h1>
         </div>
       </header>

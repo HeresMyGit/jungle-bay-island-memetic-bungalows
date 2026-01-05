@@ -2,7 +2,17 @@ import React, { useState } from 'react';
 
 export default function TokenList({ tokens, onToggle, onRemove }) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [copiedId, setCopiedId] = useState(null);
   const enabledCount = tokens.filter(t => t.enabled).length;
+
+  const handleCopy = async (e, token) => {
+    e.stopPropagation();
+    if (token.contract) {
+      await navigator.clipboard.writeText(token.contract);
+      setCopiedId(token.id);
+      setTimeout(() => setCopiedId(null), 1500);
+    }
+  };
 
   const handleSelectAll = () => {
     tokens.forEach(token => {
@@ -51,18 +61,29 @@ export default function TokenList({ tokens, onToggle, onRemove }) {
               style={{ backgroundColor: token.color }}
             />
             <span className="token-symbol">{token.symbol}</span>
-            {token.isCustom && (
-              <button
-                className="btn-remove"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onRemove(token.id);
-                }}
-                title="Remove token"
-              >
-                ×
-              </button>
-            )}
+            <div className="token-actions">
+              {token.contract && (
+                <button
+                  className="btn-copy"
+                  onClick={(e) => handleCopy(e, token)}
+                  title="Copy contract address"
+                >
+                  {copiedId === token.id ? '✓' : '⧉'}
+                </button>
+              )}
+              {token.isCustom && (
+                <button
+                  className="btn-remove"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onRemove(token.id);
+                  }}
+                  title="Remove token"
+                >
+                  ×
+                </button>
+              )}
+            </div>
           </div>
         ))}
       </div>

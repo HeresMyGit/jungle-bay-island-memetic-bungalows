@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { createChart, LineSeries, PriceScaleMode } from 'lightweight-charts';
-import { filterDataByRange, formatMarketCap, TIME_RANGES } from '../data/mockData';
+import { filterDataByRange, formatMarketCap, formatAxisLabel, TIME_RANGES } from '../data/mockData';
 
 export default function Chart({ tokens, selectedRange, onRangeChange }) {
   const [isLogScale, setIsLogScale] = useState(false);
@@ -40,7 +40,8 @@ export default function Chart({ tokens, selectedRange, onRangeChange }) {
       layout: {
         background: { color: 'transparent' },
         textColor: '#737373',
-        fontFamily: 'inherit',
+        fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        fontSize: 18,
       },
       grid: {
         vertLines: { color: '#1a1a1a' },
@@ -59,6 +60,9 @@ export default function Chart({ tokens, selectedRange, onRangeChange }) {
           style: 2,
           labelBackgroundColor: '#262626',
         },
+      },
+      localization: {
+        priceFormatter: formatAxisLabel,
       },
       rightPriceScale: {
         borderVisible: false,
@@ -231,6 +235,8 @@ export default function Chart({ tokens, selectedRange, onRangeChange }) {
         </div>
       </div>
       <div className="chart-container" style={{ position: 'relative' }}>
+        <div className="axis-label axis-label-y">Market Cap</div>
+        <div className="axis-label axis-label-x">Date</div>
         <div ref={chartContainerRef} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} />
         <div
           ref={tooltipRef}
