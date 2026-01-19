@@ -119,6 +119,15 @@ export const WATCHED_TOKENS = {
       platform: 'base',
       contract: '0x3D01Fe5A38ddBD307fDd635b4Cb0e29681226D6f',
       enabled: false
+    },
+    {
+      id: 'mfer-base',
+      symbol: 'MFER',
+      name: '$mfer',
+      color: '#000000',
+      platform: 'base',
+      contract: '0xE3086852A4B125803C815a158249ae468A3254Ca',
+      enabled: false
     }
   ],
   secondary: [
